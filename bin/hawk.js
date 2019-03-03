@@ -29,3 +29,7 @@ child.stdout.on('data', (data) => {
 child.stderr.on('data', (data) => {
     console.log(data);
 })
+
+child.on('error', (data) => {
+    console.log(data);
+})
