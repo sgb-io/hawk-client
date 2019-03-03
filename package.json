@@ -1,6 +1,6 @@
 {
   "name": "codehawk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CodeHawk client",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {},
   "bin": {
-    "codehawk": "./bin/hawk.js"
+    "codehawk": "node ./bin/hawk.js"
   }
 }
