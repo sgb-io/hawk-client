@@ -3,17 +3,17 @@ const path = require('path')
 
 const os = process.platform
 
-let target = path.resolve(__dirname + '/hawk-linux')
+let target = path.resolve(__dirname + '/hawk-javascript-linux')
 
 if (os === 'darwin') {
-    target = path.resolve(__dirname + '/hawk-macos')
+    target = path.resolve(__dirname + '/hawk-javascript-macos')
 }
 
 if (os === 'win32') {
-    target = path.resolve(__dirname + '/hawk-win.exe')
+    target = path.resolve(__dirname + '/hawk-javascript-win.exe')
 }
 
-const child = spawn(target, {
+const child = spawn(`IS_PROD=true ${target}`, {
     stdio: [
         0,
         'pipe',
@@ -21,13 +21,9 @@ const child = spawn(target, {
 })
 
 child.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
+    console.log(data);
 })
 
 child.stderr.on('data', (data) => {
-    console.log(`stderr: ${data}`);
-})
-
-child.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
+    console.log(data);
 })
