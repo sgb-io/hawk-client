@@ -17,8 +17,10 @@ if (os === 'win32') {
 
 const child = spawn(
     target,
-    ['NODE_ENV=production'],
     {
+        env: {
+            NODE_ENV: 'production'
+        },
         stdio: [
             0,
             'pipe',
