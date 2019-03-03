@@ -15,21 +15,25 @@ if (os === 'win32') {
     target = path.resolve(__dirname + '/hawk-javascript-win.exe')
 }
 
-const child = spawn(`IS_PROD=true ${target}`, {
-    stdio: [
-        0,
-        'pipe',
-    ]
-})
+const child = spawn(
+    target,
+    ['IS_PROD=true'],
+    {
+        stdio: [
+            0,
+            'pipe',
+        ]
+    }
+)
 
 child.stdout.on('data', (data) => {
-    console.log(data);
+    console.log(data.toString())
 })
 
 child.stderr.on('data', (data) => {
-    console.log(data);
+    console.log(data.toString())
 })
 
 child.on('error', (data) => {
-    console.log(data);
+    console.log(data.toString())
 })
