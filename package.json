@@ -1,13 +1,13 @@
 {
   "name": "codehawk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "CodeHawk client",
   "main": "node ./bin/hawk.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sam Brown (sam@sgb.io)",
-  "license": "ISC",
+  "license": "LicenseRef-LICENSE",
   "dependencies": {},
   "bin": "./bin/hawk.js"
 }
