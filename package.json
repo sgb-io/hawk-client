@@ -1,6 +1,6 @@
 {
   "name": "codehawk",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "CodeHawk client",
   "main": "node ./bin/hawk.js",
   "scripts": {
