@@ -19,7 +19,8 @@ const child = spawn(
     target,
     {
         env: {
-            NODE_ENV: 'production'
+            NODE_ENV: 'production',
+            IS_CI: 'true',
         },
         stdio: [
             0,
