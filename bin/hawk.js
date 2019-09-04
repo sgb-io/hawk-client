@@ -3,6 +3,10 @@
 const { spawn } = require('child_process');
 const path = require('path')
 
+const {
+    EMAIL,
+    AUTH_TOKEN,
+} = process.env
 const os = process.platform
 
 let target = path.resolve(__dirname + '/hawk-javascript-linux')
@@ -21,6 +25,8 @@ const child = spawn(
         env: {
             NODE_ENV: 'production',
             IS_CI: 'true',
+            EMAIL,
+            AUTH_TOKEN,
         },
         stdio: [
             0,
