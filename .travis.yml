@@ -4,6 +4,9 @@ os:
   - windows
 language: bash
 script: ./test
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install expect
 notifications:
   email:
     on_success: never
