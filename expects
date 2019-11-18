@@ -1,5 +1,6 @@
 #!/usr/bin/expect
 
+nvm use node
 spawn node bin/index.js
 
 expect "Please enter your email (must match the one used to sign up with Hawk):\n"
