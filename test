@@ -8,6 +8,17 @@ if [ ! -d "tests/bats" ] ; then
 fi
 
 # Run tests
-echo "Attempting to run bats tests..."
-ls -l tests/bats
-tests/bats/bin/bats tests
+# echo "Attempting to run bats tests..."
+# tests/bats/bin/bats tests
+
+apt-get install expect
+
+spawn codehawk
+
+expect "Please enter your email (must match the one used to sign up with Hawk):\n"
+send "travis@codehawk.app"
+
+expect "Please enter your account auth token:\n"
+send "travis-fake-auth-token"
+
+expect "Unable to find git data, please re-run in a git repository."
