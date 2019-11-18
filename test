@@ -2,4 +2,5 @@
 set -euo pipefail
 
 # Run tests
-./expects.sh
+./expects/no-config.sh
+./expects/config-no-creds.sh
