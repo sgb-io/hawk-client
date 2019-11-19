@@ -1,0 +1,14 @@
+os:
+  - osx
+  - linux
+  - windows
+language: bash
+script: ./test
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install expect
+  - nvm install node
+  - nvm use node
+notifications:
+  email:
+    on_success: never
