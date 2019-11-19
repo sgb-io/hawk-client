@@ -6,6 +6,7 @@ const path = require('path')
 const {
     EMAIL,
     AUTH_TOKEN,
+    IS_CI,
 } = process.env
 const os = process.platform
 
@@ -24,7 +25,7 @@ const child = spawn(
     {
         env: {
             NODE_ENV: 'production',
-            IS_CI: 'true',
+            IS_CI,
             EMAIL,
             AUTH_TOKEN,
         },
